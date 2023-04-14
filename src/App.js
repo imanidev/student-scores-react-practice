@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Student from './Components/Student';
 
+
 function App() {
 	const [ studentData, setStudentData ] = useState({
+		//studentData is the state, setStudentData is the function that updates the state
 		students: [
 			{
 				name: 'James Smith',
@@ -71,10 +73,16 @@ function App() {
 	return (
 		<div>
 			{studentData.students.map((student, index) => (
-				<Student key={index} name={student.name} bio={student.bio} scores={student.scores} />
+				<Student
+					key={index}
+					name={student.name}
+					bio={student.bio}
+					scores={student.scores}
+				/> //'Student' is a component
 			))}
 		</div>
 	);
 }
 
+//the index is the key
 export default App;
